@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+  <!-- Mirrored from connectme-html.themeyn.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2023 06:01:12 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=utf-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>Messages | ConnectMe | Chat Application HTML Template</title>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.3.1/peerjs.min.js.map" type="text/javascript"></script>
+    <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/assets/css/bundle1c4a.css" />
+    <link rel="stylesheet" href="/assets/css/app1c4a.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+
+  </head>
+
+  <body class="tyn-body">
+    <div class="tyn-root">
+     <%- include("layouts/header")%>
+      <!-- .tyn-appbar -->
+      <div class="tyn-content tyn-content-full-height tyn-chat has-aside-base">
+       <%- include("contexts/sidebarLeftMss")%>
+        <!-- .tyn-aside -->
+        <%- include("contexts/mainMss")%>
+        <!-- .tyn-chat-content -->
+      </div>
+      <div class="tyn-quick-chat" id="tynQuickChat">
+        <button class="tyn-quick-chat-toggle js-toggle-quick">
+          <svg
+            viewBox="0 0 43 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M37.2654 14.793C37.2654 14.793 45.0771 20.3653 41.9525 29.5311C41.9525 29.5311 41.3796 31.1976 39.0361 34.4264L42.4732 37.9677C42.4732 37.9677 43.3065 39.478 41.5879 39.9987H24.9229C24.9229 39.9987 19.611 40.155 14.8198 36.9782C14.8198 36.9782 12.1638 35.2076 9.76825 31.9787L18.6215 32.0308C18.6215 32.0308 24.298 31.9787 29.7662 28.3333C35.2344 24.6878 37.4217 18.6988 37.2654 14.793Z"
+              fill="#60A5FA"
+            />
+            <path
+              d="M34.5053 12.814C32.2659 1.04441 19.3506 0.0549276 19.3506 0.0549276C8.31004 -0.674164 3.31055 6.09597 3.31055 6.09597C-4.24076 15.2617 3.6751 23.6983 3.6751 23.6983C3.6751 23.6983 2.99808 24.6357 0.862884 26.5105C-1.27231 28.3854 1.22743 29.3748 1.22743 29.3748H17.3404C23.4543 28.7499 25.9124 27.3959 25.9124 27.3959C36.328 22.0318 34.5053 12.814 34.5053 12.814ZM19.9963 18.7301H9.16412C8.41419 18.7301 7.81009 18.126 7.81009 17.3761C7.81009 16.6261 8.41419 16.022 9.16412 16.022H19.9963C20.7463 16.022 21.3504 16.6261 21.3504 17.3761C21.3504 18.126 20.7358 18.7301 19.9963 18.7301ZM25.3708 13.314H9.12245C8.37253 13.314 7.76843 12.7099 7.76843 11.96C7.76843 11.21 8.37253 10.6059 9.12245 10.6059H25.3708C26.1207 10.6059 26.7248 11.21 26.7248 11.96C26.7248 12.7099 26.1103 13.314 25.3708 13.314Z"
+              fill="#2563EB"
+            />
+          </svg>
+          <span
+            class="badge bg-primary top-0 end-0 position-absolute rounded-pill"
+            >2</span
+          >
+        </button>
+        <div class="tyn-quick-chat-box">
+          <div class="tyn-quick-chat-head">
+            <div class="tyn-media-group">
+              <div class="tyn-media tyn-size-rg">
+                <img src="images/avatar/1.jpg" alt="" />
+              </div>
+              <div class="tyn-media-col">
+                <div class="tyn-media-row">
+                  <h6 class="name">Jasmine Thompson</h6>
+                </div>
+                <div class="tyn-media-row has-dot-sap">
+                  <span class="meta">Active</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tyn-quick-chat-reply js-scroll-to-end">
+            <div class="tyn-reply tyn-reply-quick" id="tynQuickReply">
+              <div class="tyn-reply-item outgoing">
+                <div class="tyn-reply-group">
+                  <div class="tyn-reply-bubble">
+                    <div class="tyn-reply-text">
+                      Do you know which App or feature it will require to set
+                      up.
+                    </div>
+                    <!-- tyn-reply-text -->
+                  </div>
+                  <!-- .tyn-reply-bubble -->
+                  <div class="tyn-reply-bubble">
+                    <div class="tyn-reply-text">These article helps.</div>
+                    <!-- tyn-reply-text -->
+                  </div>
+                  <!-- .tyn-reply-bubble -->
+                </div>
+                <!-- .tyn-reply-group -->
+              </div>
+              <!-- .tyn-reply-item -->
+              <div class="tyn-reply-item incoming">
+                <div class="tyn-reply-avatar">
+                  <div class="tyn-media tyn-size-md tyn-circle">
+                    <img src="images/avatar/2.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="tyn-reply-group">
+                  <div class="tyn-reply-bubble">
+                    <div class="tyn-reply-link">
+                      <a
+                        class="tyn-reply-anchor"
+                        href="https://www.envato.com/atomic-power-plant-engine/"
+                        >https://www.envato.com/atomic-power-plant-engine/</a
+                      >
+                    </div>
+                  </div>
+                  <!-- .tyn-reply-bubble -->
+                  <div class="tyn-reply-bubble">
+                    <div class="tyn-reply-text">
+                      I hope these article helps.
+                    </div>
+                  </div>
+                  <!-- .tyn-reply-bubble -->
+                </div>
+                <!-- .tyn-reply-group -->
+              </div>
+              <!-- .tyn-reply-item -->
+              <div class="tyn-reply-separator">May 10, 2022, 11:14 AM</div>
+              <div class="tyn-reply-item outgoing">
+                <div class="tyn-reply-group">
+                  <div class="tyn-reply-bubble">
+                    <div class="tyn-reply-text">
+                      Yes, you can reset your password online. Go to the login
+                      page, click on "Forgot Password," and follow the
+                      instructions to reset it.
+                    </div>
+                    <!-- tyn-reply-text -->
+                  </div>
+                  <!-- .tyn-reply-bubble -->
+                </div>
+                <!-- .tyn-reply-group -->
+              </div>
+              <!-- .tyn-reply-item -->
+              <div class="tyn-reply-item incoming">
+                <div class="tyn-reply-avatar">
+                  <div class="tyn-media tyn-size-md tyn-circle">
+                    <img src="images/avatar/2.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="tyn-reply-group">
+                  <div class="tyn-reply-bubble">
+                    <div class="tyn-reply-text">
+                      How do I reset my password? Can I do it online?
+                    </div>
+                  </div>
+                  <!-- .tyn-reply-bubble -->
+                </div>
+                <!-- .tyn-reply-group -->
+              </div>
+              <!-- .tyn-reply-item -->
+            </div>
+            <!-- .tyn-reply -->
+          </div>
+          <div class="tyn-quick-chat-form">
+            <div
+              class="tyn-chat-form-input bg-light"
+              id="tynQuickChatInput"
+              contenteditable
+            ></div>
+            <ul class="tyn-list-inline me-n2 my-1">
+              <li>
+                <button class="btn btn-icon btn-white btn-sm btn-pill">
+                  <!-- send-fill -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-send-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"
+                    />
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <button
+            class="btn btn-danger btn-sm btn-icon top-0 end-0 position-absolute rounded-pill translate-middle js-toggle-quick"
+          >
+            <!-- x-lg -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="callingScreen"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0">
+          <div class="tyn-chat-call">
+            <div class="tyn-chat-cover">
+              <img src="images/cover/1.jpg" alt="" />
+            </div>
+            <div
+              class="tyn-media-group tyn-media-vr tyn-media-center mt-n4 pb-4"
+            >
+              <div
+                class="tyn-media tyn-size-xl tyn-circle border border-2 border-white"
+              >
+                <img src="images/avatar/1.jpg" alt="" />
+              </div>
+              <div class="tyn-media-col">
+                <div class="tyn-media-row has-dot-sap">
+                  <span class="meta">Calling ...</span>
+                </div>
+                <div class="tyn-media-row">
+                  <h6 class="name">Konstantin Frank</h6>
+                </div>
+              </div>
+            </div>
+            <!-- .tyn-media-group -->
+            <ul class="tyn-list-inline gap gap-3 m-auto py-4">
+              <li>
+                <button
+                  class="btn btn-light"
+                  data-bs-dismiss="modal"
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoCallingScreen"
+                >
+                  <span>Switch To</span>
+                  <!-- camera-video-fill -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-camera-video-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"
+                    />
+                  </svg>
+                </button>
+                
+              </li>
+            </ul>
+            <!-- .tyn-list-inline -->
+            <ul class="tyn-list-inline gap gap-3 mx-auto py-4">
+              <li>
+                <button class="btn btn-icon btn-pill btn-light">
+                  <!-- person-plus-fill -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-person-plus-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
+                    />
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-icon btn-pill btn-light">
+                  <!-- mic-mute-fill -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-mic-mute-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M13 8c0 .564-.094 1.107-.266 1.613l-.814-.814A4.02 4.02 0 0 0 12 8V7a.5.5 0 0 1 1 0v1zm-5 4c.818 0 1.578-.245 2.212-.667l.718.719a4.973 4.973 0 0 1-2.43.923V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 1 0v1a4 4 0 0 0 4 4zm3-9v4.879L5.158 2.037A3.001 3.001 0 0 1 11 3z"
+                    />
+                    <path
+                      d="M9.486 10.607 5 6.12V8a3 3 0 0 0 4.486 2.607zm-7.84-9.253 12 12 .708-.708-12-12-.708.708z"
+                    />
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button
+                  class="btn btn-icon btn-pill btn-danger"
+                  data-bs-dismiss="modal"
+             
+                >
+                  <!-- telephone-x-fill view -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-telephone-x-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm9.261 1.135a.5.5 0 0 1 .708 0L13 2.793l1.146-1.147a.5.5 0 0 1 .708.708L13.707 3.5l1.147 1.146a.5.5 0 0 1-.708.708L13 4.207l-1.146 1.147a.5.5 0 0 1-.708-.708L12.293 3.5l-1.147-1.146a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                </button>
+                
+              </li>
+            </ul>
+            <!-- .tyn-list-inline -->
+          </div>
+          <!-- .tyn-chat-call -->
+        </div>
+        <!-- .modal-content -->
+      </div>
+      <!-- .modal-dialog -->
+    </div>
+    <!-- .modal -->
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="videoCallingScreen"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0">
+          <div class="tyn-chat-call tyn-chat-call-video">
+            <div class="tyn-chat-call-stack">
+              <div class="tyn-chat-call-cover">
+                <img src="images/v-cover/1.jpg" alt="" />
+              </div>
+            </div>
+            <!-- .tyn-chat-call-stack -->
+            <div class="tyn-chat-call-stack on-dark">
+              <div class="tyn-media-group p-4">
+                <div class="tyn-media-col align-self-start pt-3">
+                  <div class="tyn-media-row has-dot-sap">
+                    <span class="meta">Talking With ...</span>
+                  </div>
+                  <div class="tyn-media-row">
+                    <h6 class="name">Konstantin Frank</h6>
+                  </div>
+                  <div class="tyn-media-row has-dot-sap">
+                    <span class="content">02:09 min</span>
+                  </div>
+                </div>
+                <div
+                  class="tyn-media tyn-media-1x1_3 tyn-size-3xl border border-2 border-dark"
+                >
+                  <img src="images/v-cover/2.jpg" alt="" />
+                </div>
+              </div>
+              <!-- .tyn-media-group -->
+              <ul
+                class="tyn-list-inline gap gap-3 mx-auto py-4 justify-content-center mt-auto"
+              >
+              
+                <li>
+                  <button
+                    class="btn btn-icon btn-pill btn-danger"
+                    onclick="controlCameraAndMicrophone(false,null)"
+                    id="disableCamera"
+                  >
+                    <!-- camera-video-fill -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-camera-video-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                  class="btn btn-icon btn-pill btn-light"
+                  onclick="controlCameraAndMicrophone(true,null)"
+                  id="enableCamera"
+                >
+                  <!-- camera-video-fill -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-camera-video-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"
+                    />
+                  </svg>
+                </button>
+                </li>
+                <li>
+                  <button class="btn btn-icon btn-pill btn-danger"
+                  id="disableMic"
+                  onclick="controlCameraAndMicrophone(null,false)"
+                  >
+                    <!-- mic-mute-fill -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-mic-mute-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M13 8c0 .564-.094 1.107-.266 1.613l-.814-.814A4.02 4.02 0 0 0 12 8V7a.5.5 0 0 1 1 0v1zm-5 4c.818 0 1.578-.245 2.212-.667l.718.719a4.973 4.973 0 0 1-2.43.923V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 1 0v1a4 4 0 0 0 4 4zm3-9v4.879L5.158 2.037A3.001 3.001 0 0 1 11 3z"
+                      />
+                      <path
+                        d="M9.486 10.607 5 6.12V8a3 3 0 0 0 4.486 2.607zm-7.84-9.253 12 12 .708-.708-12-12-.708.708z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="btn btn-icon btn-pill btn-light"
+                  id="enableMic"
+                  onclick="controlCameraAndMicrophone(null,true)"
+                  >
+                    <!-- mic-mute-fill -->
+                    <svg class="bi bi-mic-fill" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic-mute-fill" viewBox="0 0 16 16">
+                      <path d="M8 0c2.209 0 4 1.791 4 4v4c0 2.209-1.791 4-4 4s-4-1.791-4-4V4c0-2.209 1.791-4 4-4zm0 1a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3zm3 5v1.793L12.293 7.5 11 8.793V7h-.001zm1 4a1 1 0 0 1-1 1h-1v1a1 1 0 1 1-2 0v-1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h2v-1a1 1 0 1 1 2 0v1h2a1 1 0 0 1 1 1z"/>
+                    </svg>
+                    
+                  
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="btn btn-icon btn-pill btn-danger"
+                    data-bs-dismiss="modal"
+                    id="callDestroy"
+                  >
+                    <!-- telephone-x-fill -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-telephone-x-fill"
+                      viewBox="0 0 16 16"
+                    
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm9.261 1.135a.5.5 0 0 1 .708 0L13 2.793l1.146-1.147a.5.5 0 0 1 .708.708L13.707 3.5l1.147 1.146a.5.5 0 0 1-.708.708L13 4.207l-1.146 1.147a.5.5 0 0 1-.708-.708L12.293 3.5l-1.147-1.146a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="btn btn-icon btn-pill btn-success d-none" id="callAccept"
+                    
+                  >
+                    <!-- telephone-x-fill -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-telephone-x-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm9.261 1.135a.5.5 0 0 1 .708 0L13 2.793l1.146-1.147a.5.5 0 0 1 .708.708L13.707 3.5l1.147 1.146a.5.5 0 0 1-.708.708L13 4.207l-1.146 1.147a.5.5 0 0 1-.708-.708L12.293 3.5l-1.147-1.146a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+              <!-- .tyn-list-inline -->
+            </div>
+            <!-- .tyn-chat-call-stack -->
+          </div>
+          <!-- .tyn-chat-call -->
+        </div>
+        <!-- .modal-content -->
+      </div>
+      <!-- .modal-dialog -->
+    </div>
+    <!-- .modal -->
+    <div class="modal fade" tabindex="-1" id="muteOptions">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0">
+          <div class="modal-body p-4">
+            <h4 class="pb-2">Mute conversation</h4>
+            <ul class="tyn-media-list gap gap-2">
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="muteFor"
+                    id="muteFor15min"
+                  />
+                  <label class="form-check-label" for="muteFor15min">
+                    For 15 minutes
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="muteFor"
+                    id="muteFor1Hour"
+                    checked
+                  />
+                  <label class="form-check-label" for="muteFor1Hour">
+                    For 1 Hours
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="muteFor"
+                    id="muteFor1Days"
+                    checked
+                  />
+                  <label class="form-check-label" for="muteFor1Days">
+                    For 1 Days
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="muteFor"
+                    id="muteForInfinity"
+                    checked
+                  />
+                  <label class="form-check-label" for="muteForInfinity">
+                    Until I turn back On
+                  </label>
+                </div>
+              </li>
+            </ul>
+            <!-- .tyn-media-list -->
+            <ul class="tyn-list-inline gap gap-3 pt-3">
+              <li>
+                <button class="btn btn-md btn-danger js-chat-mute">Mute</button>
+              </li>
+              <li>
+                <button class="btn btn-md btn-light" data-bs-dismiss="modal">
+                  Close
+                </button>
+              </li>
+            </ul>
+            <!-- .tyn-list-inline -->
+          </div>
+          <!-- .modal-body -->
+          <button
+            class="btn btn-md btn-icon btn-pill btn-white shadow position-absolute top-0 end-0 mt-n3 me-n3"
+            data-bs-dismiss="modal"
+          >
+            <!-- x-lg -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- .modal-content -->
+      </div>
+      <!-- .modal-dialog -->
+    </div>
+    <!-- .modal -->
+    <div class="modal fade" tabindex="-1" id="newChat">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0">
+          <div class="modal-body p-4">
+            <h4 class="pb-2">Search by Name</h4>
+            <div class="form-group">
+              <div class="form-control-wrap">
+                <div class="form-control-icon start">
+                  <!-- search -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-search"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  class="form-control form-control-solid"
+                  id="search-contact"
+                  placeholder="Search contact"
+                />
+              </div>
+            </div>
+            <ul class="tyn-media-list gap gap-3 pt-4">
+              <li>
+                <div class="tyn-media-group">
+                  <div class="tyn-media">
+                    <img src="images/avatar/1.jpg" alt="" />
+                  </div>
+                  <div class="tyn-media-col">
+                    <div class="tyn-media-row">
+                      <h6 class="name">Jasmine Thompson</h6>
+                    </div>
+                    <div class="tyn-media-row">
+                      <p class="content">@thompson_jasmine</p>
+                    </div>
+                  </div>
+                  <ul class="tyn-media-option-list me-n1">
+                    <li class="dropdown">
+                      <button
+                        class="btn btn-icon btn-white btn-pill dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        data-bs-offset="0,0"
+                        data-bs-auto-close="outside"
+                      >
+                        <!-- three-dots -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-three-dots"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <ul class="tyn-list-links">
+                          <li>
+                            <button data-bs-dismiss="modal">
+                              <!-- chat-left-text -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-chat-left-text"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                                />
+                                <path
+                                  d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
+                                />
+                              </svg>
+                              <span>Start Texting</span>
+                            </button>
+                          </li>
+                          <li>
+                            <a href="#callingScreen" data-bs-toggle="modal">
+                              <!-- telephone -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-telephone"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                                />
+                              </svg>
+                              <span>Audio Call</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#videoCallingScreen"
+                              data-bs-toggle="modal"
+                            >
+                              <!-- camera-video -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-camera-video"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"
+                                />
+                              </svg>
+                              <span>Video Call</span>
+                            </a>
+                          </li>
+                        </ul>
+                        <!-- .tyn-list-links -->
+                      </div>
+                      <!-- .dropdown-menu -->
+                    </li>
+                    <!-- li -->
+                  </ul>
+                  <!-- .tyn-media-option-list -->
+                </div>
+                <!-- .tyn-media-group -->
+              </li>
+              <!-- li -->
+              <li>
+                <div class="tyn-media-group">
+                  <div class="tyn-media">
+                    <img src="images/avatar/2.jpg" alt="" />
+                  </div>
+                  <div class="tyn-media-col">
+                    <div class="tyn-media-row">
+                      <h6 class="name">Konstantin Frank</h6>
+                    </div>
+                    <div class="tyn-media-row">
+                      <p class="content">@konstantin_frank</p>
+                    </div>
+                  </div>
+                  <ul class="tyn-media-option-list me-n1">
+                    <li class="dropdown">
+                      <button
+                        class="btn btn-icon btn-white btn-pill dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        data-bs-offset="0,0"
+                        data-bs-auto-close="outside"
+                      >
+                        <!-- three-dots -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-three-dots"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <ul class="tyn-list-links">
+                          <li>
+                            <button data-bs-dismiss="modal">
+                              <!-- chat-left-text -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-chat-left-text"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                                />
+                                <path
+                                  d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
+                                />
+                              </svg>
+                              <span>Start Texting</span>
+                            </button>
+                          </li>
+                          <li>
+                            <a href="#callingScreen" data-bs-toggle="modal">
+                              <!-- telephone -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-telephone"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                                />
+                              </svg>
+                              <span>Audio Call</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#videoCallingScreen"
+                              data-bs-toggle="modal"
+                            >
+                              <!-- camera-video -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-camera-video"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"
+                                />
+                              </svg>
+                              <span>Video Call</span>
+                            </a>
+                          </li>
+                        </ul>
+                        <!-- .tyn-list-links -->
+                      </div>
+                      <!-- .dropdown-menu -->
+                    </li>
+                    <!-- li -->
+                  </ul>
+                  <!-- .tyn-media-option-list -->
+                </div>
+                <!-- .tyn-media-group -->
+              </li>
+              <!-- li -->
+              <li>
+                <div class="tyn-media-group">
+                  <div class="tyn-media">
+                    <img src="images/avatar/3.jpg" alt="" />
+                  </div>
+                  <div class="tyn-media-col">
+                    <div class="tyn-media-row">
+                      <h6 class="name">Mathias Devos</h6>
+                    </div>
+                    <div class="tyn-media-row">
+                      <p class="content">@mathias_devos</p>
+                    </div>
+                  </div>
+                  <ul class="tyn-media-option-list me-n1">
+                    <li class="dropdown">
+                      <button
+                        class="btn btn-icon btn-white btn-pill dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        data-bs-offset="0,0"
+                        data-bs-auto-close="outside"
+                      >
+                        <!-- three-dots -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-three-dots"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <ul class="tyn-list-links">
+                          <li>
+                            <button data-bs-dismiss="modal">
+                              <!-- chat-left-text -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-chat-left-text"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                                />
+                                <path
+                                  d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
+                                />
+                              </svg>
+                              <span>Start Texting</span>
+                            </button>
+                          </li>
+                          <li>
+                            <a href="#callingScreen" data-bs-toggle="modal">
+                              <!-- telephone -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-telephone"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                                />
+                              </svg>
+                              <span>Audio Call</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#videoCallingScreen"
+                              data-bs-toggle="modal"
+                            >
+                              <!-- camera-video -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-camera-video"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"
+                                />
+                              </svg>
+                              <span>Video Call</span>
+                            </a>
+                          </li>
+                        </ul>
+                        <!-- .tyn-list-links -->
+                      </div>
+                      <!-- .dropdown-menu -->
+                    </li>
+                    <!-- li -->
+                  </ul>
+                  <!-- .tyn-media-option-list -->
+                </div>
+                <!-- .tyn-media-group -->
+              </li>
+              <!-- li -->
+              <li>
+                <div class="tyn-media-group">
+                  <div class="tyn-media">
+                    <img src="images/avatar/4.jpg" alt="" />
+                  </div>
+                  <div class="tyn-media-col">
+                    <div class="tyn-media-row">
+                      <h6 class="name">Marie George</h6>
+                    </div>
+                    <div class="tyn-media-row">
+                      <p class="content">@marie_george</p>
+                    </div>
+                  </div>
+                  <ul class="tyn-media-option-list me-n1">
+                    <li class="dropdown">
+                      <button
+                        class="btn btn-icon btn-white btn-pill dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        data-bs-offset="0,0"
+                        data-bs-auto-close="outside"
+                      >
+                        <!-- three-dots -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-three-dots"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <ul class="tyn-list-links">
+                          <li>
+                            <button data-bs-dismiss="modal">
+                              <!-- chat-left-text -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-chat-left-text"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                                />
+                                <path
+                                  d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
+                                />
+                              </svg>
+                              <span>Start Texting</span>
+                            </button>
+                          </li>
+                          <li>
+                            <a href="#callingScreen" data-bs-toggle="modal">
+                              <!-- telephone -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-telephone"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                                />
+                              </svg>
+                              <span>Audio Call</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#videoCallingScreen"
+                              data-bs-toggle="modal"
+                            >
+                              <!-- camera-video -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-camera-video"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"
+                                />
+                              </svg>
+                              <span>Video Call</span>
+                            </a>
+                          </li>
+                        </ul>
+                        <!-- .tyn-list-links -->
+                      </div>
+                      <!-- .dropdown-menu -->
+                    </li>
+                    <!-- li -->
+                  </ul>
+                  <!-- .tyn-media-option-list -->
+                </div>
+                <!-- .tyn-media-group -->
+              </li>
+              <!-- li -->
+              <li>
+                <div class="tyn-media-group">
+                  <div class="tyn-media">
+                    <img src="images/avatar/5.jpg" alt="" />
+                  </div>
+                  <div class="tyn-media-col">
+                    <div class="tyn-media-row">
+                      <h6 class="name">Phillip Burke</h6>
+                    </div>
+                    <div class="tyn-media-row">
+                      <p class="content">@phillip_burke</p>
+                    </div>
+                  </div>
+                  <ul class="tyn-media-option-list me-n1">
+                    <li class="dropdown">
+                      <button
+                        class="btn btn-icon btn-white btn-pill dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        data-bs-offset="0,0"
+                        data-bs-auto-close="outside"
+                      >
+                        <!-- three-dots -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-three-dots"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                          />
+                        </svg>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <ul class="tyn-list-links">
+                          <li>
+                            <button data-bs-dismiss="modal">
+                              <!-- chat-left-text -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-chat-left-text"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                                />
+                                <path
+                                  d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
+                                />
+                              </svg>
+                              <span>Start Texting</span>
+                            </button>
+                          </li>
+                          <li>
+                            <a href="#callingScreen" data-bs-toggle="modal">
+                              <!-- telephone -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-telephone"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                                />
+                              </svg>
+                              <span>Audio Call</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#videoCallingScreen"
+                              data-bs-toggle="modal"
+                            >
+                              <!-- camera-video -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-camera-video"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"
+                                />
+                              </svg>
+                              <span>Video Call</span>
+                            </a>
+                          </li>
+                        </ul>
+                        <!-- .tyn-list-links -->
+                      </div>
+                      <!-- .dropdown-menu -->
+                    </li>
+                    <!-- li -->
+                  </ul>
+                  <!-- .tyn-media-option-list -->
+                </div>
+                <!-- .tyn-media-group -->
+              </li>
+              <!-- li -->
+            </ul>
+            <!-- .tyn-media-list -->
+          </div>
+          <!-- .modal-body -->
+          <button
+            class="btn btn-md btn-icon btn-pill btn-white shadow position-absolute top-0 end-0 mt-n3 me-n3"
+            data-bs-dismiss="modal"
+          >
+            <!-- x-lg -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- .modal-content -->
+      </div>
+      <!-- .modal-dialog -->
+    </div>
+    <!-- .modal -->
+    <div class="modal fade" tabindex="-1" id="deleteChat">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0">
+          <div class="modal-body">
+            <div class="py-4 px-4 text-center">
+              <h3>Delete chat</h3>
+              <p class="small">
+                Once you delete your copy of this conversation, it cannot be
+                undone.
+              </p>
+              <ul class="tyn-list-inline gap gap-3 pt-1 justify-content-center">
+                <li>
+                  <button class="btn btn-danger" data-bs-dismiss="modal">
+                    Delete
+                  </button>
+                </li>
+                <li>
+                  <button class="btn btn-light" data-bs-dismiss="modal">
+                    No
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- .modal-body -->
+          <button
+            class="btn btn-md btn-icon btn-pill btn-white shadow position-absolute top-0 end-0 mt-n3 me-n3"
+            data-bs-dismiss="modal"
+          >
+            <!-- x-lg -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- .modal-content -->
+      </div>
+      <!-- .modal-dialog -->
+    </div>
+    <!-- .modal -->
+   
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/js/header.js"></script>
+    <!-- <script type="text/javascript" src=" assets/js/sidebarLeftMss.js"></script> -->
+    <script src="/assets/js/bundle1c4a.js?v131"></script>
+    <script src="/assets/js/app1c4a.js?v131"></script>
+    <script src="/assets/js/general.js"></script>
+    <script src="/assets/js/render.js"></script>
+   
+
+    <script src="/assets/js/message.js"></script>
+    <script src="/assets/js/call.js" ></script>
+    <script src="/assets/js/conversation.js"></script>
+    <script src="/assets/js/index.js"></script>
+   
+
+  </body>
+
+  <!-- Mirrored from connectme-html.themeyn.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Aug 2023 06:01:25 GMT -->
+</html>
